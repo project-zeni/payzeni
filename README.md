@@ -41,18 +41,18 @@ Set the hash value in the request header with a header name of `X-payzeni-apiaut
 | Description                         | Submit a payment request |                                  
 | ------------------------------- | ------------------------------------------------------- |
 | HTTP Method                         | POST                                                   |
-| Endpoint URL                        | https\://\{host}/mxapi/\ {merchantId}/paymentrequest/submit |
-| Request Headers                     | `Content-Type: application/json`;              <br> `X-payzeni-apiauthz: \{hashed token}` |                                             |
+| Endpoint URL                        | `https://{host}/mxapi/{merchantId}/paymentrequest/submit` |
+| Request Headers                     | `Content-Type: application/json;`              <br> `X-payzeni-apiauthz: {hashed token}` |                                             |
 | Request Body      | In JSON format. Attributes as described below.             |
 
-Response Attributes:
+**_Response Attributes:_**
 
 |Attribute Name	|Type	|Description
 | ----------------------------------- |--- |---------------------------------------------------------- |
 |txnId	| Numeric	| Payzeni’s transaction identifier |
 |orderId	|String	|Your transaction/order identifier as specified in the request|
 |createDate	|String|	The date/time the transaction was created|
-|status	|String	|The current status of the transaction. Possible values: <br>PENDING <br>	COMPLETED <br>	CANCELLED <br>	REJECTED <br>	TIMEDOUT <br>	SYSERR
+|status	|String	|The current status of the transaction. Possible values: <br>`PENDING` <br>	`COMPLETED` <br>	`CANCELLED` <br>	`REJECTED` <br>	`TIMEDOUT` <br>	`SYSERR`
 |statusDate |	String|	The date/time the current status was set
 |requestedAmount |	Numeric	|The requested amount
 |processedAmount	|Numeric|	The amount processed/fulfilled. This will be zero until the customer fulfills the payment request
@@ -113,8 +113,8 @@ Set the hash value in the request header with a header name of `X-payzeni-apiaut
 |Description |Query a payment request |
 |---|---|
 | HTTP Method |POST|
-| Endpoint URL | https://{host}/mxapi/{merchantId}/paymentrequest/query |
-| Request Headers | `Content-Type: application/json` <br> `X-payzeni-apiauthz: {hashed token}`
+| Endpoint URL | `https://{host}/mxapi/{merchantId}/paymentrequest/query` |
+| Request Headers | `Content-Type: application/json;` <br> `X-payzeni-apiauthz: {hashed token}`
 |Request Body |In JSON format. Attributes as described below. |
 
 **_Request Body Attributes:_**
